@@ -1,0 +1,197 @@
+<FormSystemGrid>:
+    countries: txtCountries
+    administrators: txtAdministrators
+    airlines: txtAirlines
+    customers: txtCustomers
+    flights: txtFlights
+    tickets: txtTickets
+    status_lbl: lblstatus_line
+
+    StackLayout:
+        padding: [100,20,100,20]
+        size: root.width, root.height
+
+        GridLayout:
+            size_hint: 1, 0.45
+            cols: 3
+            row_default_height: 30
+            row_force_default: True
+            spacing: 15, 5
+
+            Label:
+                id: lblCountries
+                text: "Countries"
+                text_size: self.size
+                halign: 'left'
+                valign: 'middle'
+
+            TextInput:
+                id: txtCountries
+                mulitiline:False
+                text: "100"
+                disabled: True
+
+            Button:
+                text:'Add To Database'
+                on_press:root.submit_add()
+
+
+            Label:
+                id: lblAdministrators
+                text: "Adminsitrators"
+                text_size: self.size
+                halign: 'left'
+                valign: 'middle'
+
+            TextInput:
+                id: txtAdministrators
+                mulitiline:False
+
+            Button:
+                text:'Replace Database'
+                on_press:root.submit_replace()
+
+            Label:
+                id: lblAirlines
+                text: "Airline Companies"
+                text_size: self.size
+                halign: 'left'
+                valign: 'middle'
+
+            TextInput:
+                id: txtAirlines
+                mulitiline:False
+
+            Widget:
+
+            Label:
+                id: lblCustomers
+                text: "Customers"
+                text_size: self.size
+                halign: 'left'
+                valign: 'middle'
+
+            TextInput:
+                id: txtCustomers
+                mulitiline:False
+
+            Widget:
+
+            Label:
+                id: lblFlights
+                text: "Flights per Airline"
+                text_size: self.size
+                halign: 'left'
+                valign: 'middle'
+
+            TextInput:
+                id: txtFlights
+                mulitiline:False
+
+            Widget:
+
+            Label:
+                id: lblTickets
+                text: "Tickets per Customer"
+                text_size: self.size
+                halign: 'left'
+                valign: 'middle'
+
+            TextInput:
+                id: txtTickets
+                mulitiline:False
+
+            Widget:
+
+        GridLayout:
+            size_hint: 1, 0.12
+            cols: 1
+            row_default_height: 30
+            row_force_default: True
+
+            Label:
+                id: lblstatus_line
+                opacity: 0
+                text : 'Initializing...'
+                font_size: '22sp'
+                text_size: self.size
+                halign: 'left'
+                valign: 'middle'
+
+            ProgressBar:
+                id :pbar_main
+                min: 0
+                max: 1
+                value: 0
+                opacity: 0
+                pos_hint: {'x':.1}
+                size_hint_x: .8
+            Widget:
+
+
+
+        GridLayout:
+            id: grd_logging
+            opacity: 0
+            size_hint: 1, None
+            padding: [0, 10, 0, 0]
+            size_hint: 1, 0.5
+            spacing: 0, 5
+
+            cols: 1
+            row_default_height: 30
+            row_force_default: True
+
+            Label:
+                id: lbl_logging
+                opacity: 0
+                text: 'Logging'
+                text_size: self.size
+                halign: 'left'
+                valign: 'middle'
+                font_size: '20sp'
+            Label:
+                id: lbl_log_countries
+                text: '- 0 countries created'
+                text_size: self.size
+                halign: 'left'
+                valign: 'middle'
+
+            Label:
+                id: lbl_log_administrators
+                text: '- 0 administrators created'
+                text_size: self.size
+                halign: 'left'
+                valign: 'middle'
+
+            Label:
+                id: lbl_log_airlines
+                text: '- 0 airline companies created'
+                text_size: self.size
+                halign: 'left'
+                valign: 'middle'
+
+            Label:
+                id: lbl_log_customers
+                text: '- 0 customers created'
+                text_size: self.size
+                halign: 'left'
+                valign: 'middle'
+
+            Label:
+                id: lbl_log_fligths
+                text: '- creating flights (0/ 0)'
+                text_size: self.size
+                halign: 'left'
+                valign: 'middle'
+
+            Label:
+                id: lbl_log_tickets
+                text: '- creating tickets (0/ 0)'
+                text_size: self.size
+                halign: 'left'
+                valign: 'middle'
+
+
+
+
